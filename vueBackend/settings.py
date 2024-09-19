@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=l32og34w%_e%ujyn39af8z)4(w4&d1s_-dk1c7rvb$b!v+vv_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['klaviyo-django-758b15dfdb44.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -46,22 +46,22 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # CorsMiddleware should be above other middleware
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Whitenoise after the rest
 ]
 
 # Allow all origins (for development)
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # Vue development server
-    # 'https://your-frontend-app.com',  # If you're using a production frontend URL
+    'https://klaviyo-django-758b15dfdb44.herokuapp.com',  # Your Heroku app
 ]
 
 
