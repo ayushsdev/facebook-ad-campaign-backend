@@ -57,7 +57,13 @@ MIDDLEWARE = [
 ]
 
 # Allow all origins (for development)
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # Vue development server
+    # 'https://your-frontend-app.com',  # If you're using a production frontend URL
+]
+
 
 ROOT_URLCONF = 'vueBackend.urls'
 
