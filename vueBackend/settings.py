@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=l32og34w%_e%ujyn39af8z)4(w4&d1s_-dk1c7rvb$b!v+vv_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['klaviyo-django-758b15dfdb44.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['klaviyo-django-758b15dfdb44.herokuapp.com', 'localhost', 'https://facebook-ad-campaign-frontend.vercel.app']
 
 
 # Application definition
@@ -62,6 +62,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # Vue development server
     'https://klaviyo-django-758b15dfdb44.herokuapp.com',  # Your Heroku app
+    'https://facebook-ad-campaign-frontend.vercel.app',  # Your Vercel app
 ]
 
 
