@@ -60,9 +60,9 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
+    'https://facebook-ad-campaign-frontend.vercel.app',  # Your Vercel app
     'http://localhost:5173',  # Vue development server
     'https://klaviyo-django-758b15dfdb44.herokuapp.com',  # Your Heroku app
-    'https://facebook-ad-campaign-frontend.vercel.app',  # Your Vercel app
 ]
 
 
@@ -141,3 +141,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APPEND_SLASH = False
