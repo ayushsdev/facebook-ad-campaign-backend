@@ -26,4 +26,3 @@ def download_pickle_from_s3(file_name):
     data = pickle.loads(pickle_bytes)
 
     return data
-

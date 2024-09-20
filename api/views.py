@@ -24,3 +24,17 @@ def feature_importances(request):
     except Exception as e:
         return Response({'error': str(e)}, status=500)
 
+
+@api_view(['GET'])
+def ad_spend_vs_clicks(request):
+    try:
+        # Load the DataFrame (you can load it from a CSV, database, or any other source)
+        df = download_pickle_from_s3('cleaned_data.pkl')  # Replace with actual data source
+
+        # Return 'spent' and 'clicks' columns as JSON
+        data = df[['spent', 'clicks']].to_dict(orient='list')
+
+        return Response(data)
+    
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
