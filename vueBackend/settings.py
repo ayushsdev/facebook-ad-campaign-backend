@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=l32og34w%_e%ujyn39af8z)4(w4&d1s_-dk1c7rvb$b!v+vv_'
+SECRET_KEY = os.getenv('django_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['klaviyo-django-758b15dfdb44.herokuapp.com', 'localhost', 'facebook-ad-campaign-frontend.vercel.app', '127.0.0.1']
 
@@ -149,3 +149,6 @@ APPEND_SLASH = False
 
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
