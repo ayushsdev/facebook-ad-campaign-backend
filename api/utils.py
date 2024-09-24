@@ -3,8 +3,10 @@ import pickle
 from io import BytesIO
 import pandas as pd
 import os
+from dotenv import load_dotenv
 
 def download_pickle_from_s3(file_name):
+    load_dotenv()
     # Hardcoded AWS credentials and S3 bucket information (for development purposes)
     aws_access_key_id = os.getenv('aws_access_key_id')
     aws_secret_access_key = os.getenv('aws_secret_access_key')

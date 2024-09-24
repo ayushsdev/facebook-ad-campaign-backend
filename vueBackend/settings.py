@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('django_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['klaviyo-django-758b15dfdb44.herokuapp.com', 'localhost', 'facebook-ad-campaign-frontend.vercel.app', '127.0.0.1']
 
@@ -61,7 +65,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
     'https://facebook-ad-campaign-frontend.vercel.app',  # Your Vercel app
-    # 'http://localhost:5173',  # Vue development server
+    'http://localhost:5174',  # Vue development server
     'https://klaviyo-django-758b15dfdb44.herokuapp.com',  # Your Heroku app
 ]
 
